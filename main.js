@@ -1,8 +1,9 @@
-colors = [ "red", "orange", "blue", "green", "yellow", "black", "white", "#EABAFF", ];
-numCards = 12;
-numWild = 8;
-isCounting = false;
-stats = {
+const slowInterval = 240;
+const superspeedInterval = 10;
+const colors = [ "red", "orange", "blue", "green", "yellow", "black", "white", "pink", ];
+const numCards = 12;
+const numWild = 8;
+const stats = {
 	"hands-dealt-stat" : 0,
 	"no-cards-same-stat" : 0,
 	"2-colors-same-stat" : 0,
@@ -14,8 +15,11 @@ stats = {
 	"4-wilds-stat" : 0,
 	"5-wilds-stat" : 0,
 };
+const testHand = [ "wild", "wild", "blue", "green", "yellow" ];
 
-testHand = [ "wild", "wild", "blue", "green", "yellow" ];
+interval = slowInterval;
+isCounting = false;
+countIntervalId = null;
 
 function onLoad() {
 	deal();
@@ -24,10 +28,11 @@ function onLoad() {
 function count() {
 	isCounting = !isCounting;
 	if (isCounting) {
-		countIntervalId = setInterval(deal, 80);
+		countIntervalId = setInterval(deal, interval);
 		$("#count-button").html("Stop");
 	} else {
 		clearInterval(countIntervalId);
+		countIntervalId = null;
 		$("#count-button").html("Count!");
 	}
 }
@@ -52,12 +57,12 @@ function deal() {
 				break;
 			}
 		}
-		if (color == "wild") {
-			$("#card" + cardNum).addClass("wild");
-		} else {
-			$("#card" + cardNum).removeClass("wild");
-			$("#card" + cardNum).css("background-color", color);
-		}
+
+		//		$("#card" + cardNum).fadeTo(interval / 2.5, 0.5, function() {
+		//			$(this).css("background-image", "url(" + color + "-card.png)");
+		//		}).fadeTo(interval / 2.5, 1);
+
+		$("#card" + cardNum).css("background-image", "url(" + color + "-card.png)");
 		deck.splice(n, 1);
 	}
 
@@ -101,5 +106,16 @@ function buildDeck() {
 	}
 	for (var j = 0; j < numWild; j++) {
 		deck.push("wild");
+	}
+}
+
+
+function superspeedChange() {
+	const isSuperspeed = $("#superspeed-checkbox")[0].checked;
+	interval = isSuperspeed ? superspeedInterval : slowInterval;
+	if (countIntervalId) {
+		clearInterval(countIntervalId);
+		isCounting = false;
+		count();
 	}
 }

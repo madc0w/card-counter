@@ -3,7 +3,7 @@ body {
 	font-family: Lato;
 }
 
-#controls .button {
+#controls div {
 	display: inline-block;
 }
 
@@ -24,16 +24,11 @@ body {
 .card {
 	border-radius: 4px;
 	margin: 20px;
-	width: 100px;
-	height: 64px;
+	width: 150px;
+	height: 96px;
 	border-width: 2px;
 	border-color: #222;
 	border-style: solid;
-}
-
-.card.wild {
-	background-image: url(wildcard.jpg);
-	background-color: transparent;
 	background-size: 100%;
 }
 
