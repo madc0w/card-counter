@@ -1,0 +1,56 @@
+body {
+	background-color: #ddd;
+	font-family: Lato;
+}
+
+#controls .button {
+	display: inline-block;
+}
+
+.button {
+	background-color: orange;
+	border-radius: 6px;
+	padding: 4px;
+	margin: 12px;
+	min-width: 100px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	border-width: 2px;
+	border-color: white;
+	border-style: solid;
+}
+
+.card {
+	border-radius: 4px;
+	margin: 20px;
+	width: 100px;
+	height: 64px;
+	border-width: 2px;
+	border-color: #222;
+	border-style: solid;
+}
+
+.card.wild {
+	background-image: url(wildcard.jpg);
+	background-color: transparent;
+	background-size: 100%;
+}
+
+#cards {
+	display: inline-block;
+}
+
+#stats {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#stats .stat-name {
+	display: inline-block;
+	min-width: 120px;
+}
+
+#stats .stat-value {
+	display: inline-block;
+}

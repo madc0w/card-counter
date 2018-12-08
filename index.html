@@ -1,0 +1,65 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<title>Card Counter</title>
+</head>
+<body onLoad="onLoad();">
+	<div id="controls">
+		<div id="deal-button" class="button" onClick="deal();">Deal</div>
+		<div id="count-button" class="button" onClick="count();">Count!</div>
+	</div>
+	<hr />
+	<div id="cards">
+		<div id="card1" class="card"></div>
+		<div id="card2" class="card"></div>
+		<div id="card3" class="card"></div>
+		<div id="card4" class="card"></div>
+		<div id="card5" class="card"></div>
+	</div>
+	<div id="stats">
+		<div class="stat">
+			<div class="stat-name">Hands dealt</div>
+			<div class="stat-value" id="hands-dealt-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">No cards same</div>
+			<div class="stat-value" id="no-cards-same-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">2 colors same</div>
+			<div class="stat-value" id="2-colors-same-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">3 colors same</div>
+			<div class="stat-value" id="3-colors-same-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">4 colors same</div>
+			<div class="stat-value" id="4-colors-same-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">5 colors same</div>
+			<div class="stat-value" id="5-colors-same-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">2 wilds</div>
+			<div class="stat-value" id="2-wilds-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">3 wilds</div>
+			<div class="stat-value" id="3-wilds-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">4 wilds</div>
+			<div class="stat-value" id="4-wilds-stat"></div>
+		</div>
+		<div class="stat">
+			<div class="stat-name">5 wilds</div>
+			<div class="stat-value" id="5-wilds-stat"></div>
+		</div>
+	</div>
+</body>
+</html>
